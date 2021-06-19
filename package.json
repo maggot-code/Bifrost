@@ -1,0 +1,41 @@
+{
+    "name": "bifrost",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "build-tsc": "vue-tsc --noEmit && vite build",
+        "serve": "vite preview"
+    },
+    "main": "./dist/bifrost.umd.js",
+    "module": "./dist/bifrost.es.js",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "import": "./dist/bifrost.es.js",
+            "require": "./dist/bifrost.umd.js"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maggot-code/Bifrost.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/maggot-code/Bifrost/issues"
+    },
+    "homepage": "https://github.com/maggot-code/Bifrost#readme",
+    "devDependencies": {
+        "@types/node": "^15.12.4",
+        "@vitejs/plugin-vue": "^1.2.3",
+        "@vue/compiler-sfc": "^3.0.5",
+        "typescript": "^4.3.2",
+        "vite": "^2.3.7",
+        "vue": "^3.0.5",
+        "vue-tsc": "^0.0.24"
+    }
+}
