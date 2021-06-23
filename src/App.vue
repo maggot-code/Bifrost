@@ -1,34 +1,27 @@
 <!--
- * @Author: zhangyang
+ * @Author: maggot-code
  * @Date: 2021-06-19 23:09:36
- * @LastEditors: zhangyang
- * @LastEditTime: 2021-06-20 00:21:27
+ * @LastEditors: maggot-code
+ * @LastEditTime: 2021-06-23 10:00:41
  * @Description: file content
 -->
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <img alt="Vue logo" src="@/assets/images/icon/logo.png" />
+    <b-main></b-main>
 </template>
 
 <script lang="ts">
+import { default as BMain } from "@/components/main";
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default defineComponent({
     name: "App",
     components: {
-        HelloWorld,
+        BMain,
     },
 });
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
+@import "@/assets/style/normalize.min.scss";
+@import "@/assets/style/base.scss";
 </style>

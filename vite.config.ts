@@ -1,13 +1,19 @@
-/*
- * @Author: zhangyang
- * @Date: 2021-06-19 23:09:36
- * @LastEditors: zhangyang
- * @LastEditTime: 2021-06-20 02:34:22
- * @Description: file content
- */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
 import path from "path";
+
+const htmlPlugin = () => {
+    return {
+        name: 'html-transform',
+        transformIndexHtml(html: string) {
+            return html.replace(
+                /<title>(.*?)<\/title>/,
+                `<title>Bifrost</title>`
+            )
+        }
+    }
+}
 
 // 解析路径
 const resolvePath = (dir: string = "src") => path.resolve(__dirname, dir);
@@ -17,14 +23,32 @@ const rewritePath = (replaceStr: any) => (path: string) => path.replace(replaceS
 
 // 插件列表
 const plugins = [
-    vue()
+    vue(),
+    htmlPlugin(),
+    styleImport({
+        libs: [{
+            libraryName: 'element-plus',
+            esModule: true,
+            ensureStyleFile: true,
+            resolveStyle: (name: string) => {
+                name = name.slice(3)
+                return `element-plus/packages/theme-chalk/src/${name}.scss`;
+            },
+            resolveComponent: (name: string) => `element-plus/lib/${name}`,
+        }]
+    }),
 ];
 
 // 路径别名
 const alias = {
+    "#": resolvePath("typings"),
+    "@pkg": resolvePath('packages'),
     "@": resolvePath(),
-    "@pkg": resolvePath('src/packages'),
+    "@ps": resolvePath("src/plugins"),
 };
+
+// 省略文件扩展名
+const extensions = ["index.ts", "index.js", "index.json", ".ts", ".js", ".json"];
 
 // 服务代理
 const proxy = {
@@ -72,7 +96,7 @@ export default defineConfig({
         terserOptions,
     },
     server: {
-        host: "http://127.0.0.1",
+        // host: "http://127.0.0.1",
         port: 8848,
         strictPort: true,
         https: false,
@@ -81,6 +105,7 @@ export default defineConfig({
     },
     resolve: {
         alias,
+        extensions
     },
     css: {
         preprocessorOptions: {
