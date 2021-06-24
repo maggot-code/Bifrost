@@ -6,7 +6,11 @@
         "dev": "vite",
         "build": "vite build",
         "build-tsc": "vue-tsc --noEmit && vite build",
-        "serve": "vite preview"
+        "serve": "vite preview",
+        "add": "node ./packages/script/add/index.ts"
+    },
+    "bin": {
+        "component": "./packages/bin/component.js"
     },
     "main": "./dist/bifrost.umd.js",
     "module": "./dist/bifrost.es.js",
@@ -40,5 +44,8 @@
         "vite-plugin-style-import": "^1.0.0",
         "vue": "^3.0.5",
         "vue-tsc": "^0.0.24"
+    },
+    "dependencies": {
+        "commander": "^7.2.0"
     }
 }

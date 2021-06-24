@@ -2,7 +2,7 @@
  * @Author: maggot-code
  * @Date: 2021-06-22 17:43:55
  * @LastEditors: maggot-code
- * @LastEditTime: 2021-06-23 09:49:54
+ * @LastEditTime: 2021-06-23 11:16:36
  * @Description: file content
  */
 import type { App } from 'vue';
@@ -17,12 +17,13 @@ import {
     // Notice
     // Navigation
     // Others
-
+    ElImage
 } from 'element-plus';
 
 const components: any[] = [
     ElButton,
     ElButtonGroup,
+    ElImage
 ];
 
 const plugins: any[] = [];
