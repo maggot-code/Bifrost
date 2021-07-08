@@ -2,7 +2,7 @@
  * @Author: maggot-code
  * @Date: 2021-06-22 17:43:55
  * @LastEditors: maggot-code
- * @LastEditTime: 2021-06-23 11:16:36
+ * @LastEditTime: 2021-07-06 15:23:46
  * @Description: file content
  */
 import type { App } from 'vue';
@@ -13,6 +13,8 @@ import {
     ElButton,
     ElButtonGroup,
     // Form
+    ElInput,
+    ElInputNumber,
     // Data
     // Notice
     // Navigation
@@ -23,6 +25,8 @@ import {
 const components: any[] = [
     ElButton,
     ElButtonGroup,
+    ElInput,
+    ElInputNumber,
     ElImage
 ];
 
