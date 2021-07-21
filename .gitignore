@@ -10,6 +10,8 @@ node_modules
 dist
 dist-ssr
 package-lock.json
+.env.development
+.env.production
 
 # local env files
 *.local
