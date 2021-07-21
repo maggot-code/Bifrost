@@ -1,8 +1,8 @@
 /*
  * @Author: maggot-code
- * @Date: 2021-06-22 17:43:55
+ * @Date: 2021-07-12 13:40:23
  * @LastEditors: maggot-code
- * @LastEditTime: 2021-07-06 15:23:46
+ * @LastEditTime: 2021-07-12 17:25:11
  * @Description: file content
  */
 import type { App } from 'vue';
@@ -10,9 +10,13 @@ import 'element-plus/packages/theme-chalk/src/base.scss';
 
 import {
     // Basic
+    ElRow,
+    ElCol,
     ElButton,
     ElButtonGroup,
     // Form
+    ElForm,
+    ElFormItem,
     ElInput,
     ElInputNumber,
     // Data
@@ -23,10 +27,20 @@ import {
 } from 'element-plus';
 
 const components: any[] = [
+    // Basic
+    ElRow,
+    ElCol,
     ElButton,
     ElButtonGroup,
+    // Form
+    ElForm,
+    ElFormItem,
     ElInput,
     ElInputNumber,
+    // Data
+    // Notice
+    // Navigation
+    // Others
     ElImage
 ];
 

@@ -2,20 +2,22 @@
  * @Author: maggot-code
  * @Date: 2021-06-23 09:47:07
  * @LastEditors: maggot-code
- * @LastEditTime: 2021-07-12 13:15:17
+ * @LastEditTime: 2021-07-12 16:05:32
  * @Description: file content
 -->
 <template>
-    <div class="b-main" :style="style">main</div>
+    <div class="b-main" :style="style">
+        <bi-form></bi-form>
+    </div>
 </template>
 
 <script lang='ts'>
 import { defineComponent } from "vue";
-
+import { default as BiForm } from "@pkg/component/form";
 export default defineComponent({
     name: "b-main",
 
-    components: {},
+    components: { BiForm },
 
     props: {
         offsetH: {
@@ -33,6 +35,10 @@ export default defineComponent({
     },
 
     setup() {},
+
+    data() {
+        return {};
+    },
 
     beforeCreate() {},
 
